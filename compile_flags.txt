@@ -1,0 +1,5 @@
+-I/opt/kry10/store/c89l2ycf8bw0335wwv6dz44f7fwnxky0-kos-runtime-aarch64-kos-linux-musl-0.1/aarch64-kos-linux-musl/include
+-I/opt/kry10/store/c89l2ycf8bw0335wwv6dz44f7fwnxky0-kos-runtime-aarch64-kos-linux-musl-0.1/aarch64-kos-linux-musl/include/kos_utils
+-I/opt/kry10/store/c89l2ycf8bw0335wwv6dz44f7fwnxky0-kos-runtime-aarch64-kos-linux-musl-0.1/aarch64-kos-linux-musl/include/kos_core
+-I/opt/kry10/store/c89l2ycf8bw0335wwv6dz44f7fwnxky0-kos-runtime-aarch64-kos-linux-musl-0.1/aarch64-kos-linux-musl/include/kos_core/sys
+-I stdint.h
