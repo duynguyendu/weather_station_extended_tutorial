@@ -3,9 +3,12 @@ defmodule WeatherStationApp do
   @moduledoc """
   Documentation for `WeatherStation`.
   """
+  alias WeatherStationApp.MsgServer
+  require Logger
 
   def start(_type, _args) do
     hello()
+    MsgServer.setup()
     {:ok, self()}
   end
 
@@ -19,7 +22,7 @@ defmodule WeatherStationApp do
 
   """
   def hello do
-    IO.puts("hello weather_station")
+    Logger.info("hello weather_station")
     :world
   end
 end

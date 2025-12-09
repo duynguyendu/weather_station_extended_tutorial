@@ -6,3 +6,4 @@
 /*_secrets
 *.img
 .DS_Store
+erl_crash.dump

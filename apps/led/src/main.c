@@ -1,12 +1,9 @@
 
 #include "server_receiver.c"
+#include "token.h"
 #include <kos.h>
 
 // Declare a set of static token slots for our message server communications
-enum token_slots {
-  TOKEN_CLIENT = 1,
-  TOKEN_LOGGING,
-};
 
 // Declare our msg server client instance
 // NB: This instance is global because it should always be in scope for the
@@ -34,7 +31,7 @@ void setup_msg_server() {
 int main(int argc, char *argv[]) {
   kos_status_t status;
 
-  kos_printf("Initializing c app Change something about \n");
+  kos_printf("Initializing LED app\n");
 
   // Signal that we are done initializing
   kos_app_ready();
@@ -50,7 +47,7 @@ int main(int argc, char *argv[]) {
   // Use the logging service to print a message
   kos_log_info(TOKEN_LOGGING, "Hello Log Server", 0);
 
-  // start_receive_server();
+  start_receive_server();
 
   // Suspend the app
   kos_tcb_suspend(KOS_ROOT_SLOT_TCB);

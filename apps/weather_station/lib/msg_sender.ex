@@ -8,11 +8,14 @@ defmodule WeatherStationApp.MsgServer do
   import K10.MsgServer
 
   def setup() do
+    Logger.info("Initializing message server for weather station app")
     :kos_status_ok = wait_for_port(@protocol)
 
+    Logger.info("Alloc token slot")
     {:kos_status_ok, token} = kos_msg_token_slot_pool_alloc()
     request_msg = kos_msg_new(0, 0, 0, "")
 
+    Logger.info("Request protocol")
     {:kos_status_ok, response_msg} = kos_dir_request(@protocol, token, K10.MsgServer.kos_msg_flag_send_token(), request_msg)
 
     Logger.info("connected to server port #{inspect(@protocol)}")
@@ -33,7 +36,7 @@ defmodule WeatherStationApp.MsgServer do
     
     Logger.info("received response: #{inspect(response_msg)}")
     Logger.info("result status: #{inspect(kos_msg_label(response_msg))}")
-    Logger.info("result string: #{inspect(kos_msg_payload(response_msg))}")
+    Logger.info("result string: #{inspempty_tokenect(kos_msg_payload(response_msg))}")
   end
 
   defp wait_for_port(port) do
